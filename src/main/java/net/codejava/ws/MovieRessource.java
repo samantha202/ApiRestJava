@@ -20,7 +20,8 @@ public class MovieRessource {
 //this http verb returns a movies according to the id	
 	@GET
 	@Path("{id}")
-	public Response get(@PathParam("id") int id) {
+	public Response get(@PathParam("id") int id) 
+	{
 		Movie movie = dao.get(id);
 		if(movie != null) {
 			return Response.ok(movie, MediaType.APPLICATION_JSON).build();
@@ -31,7 +32,8 @@ public class MovieRessource {
 //this verb http returns a films according to the city of projection
 	@GET
 	@Path("vil/{ville}")
-	public Response get(@PathParam("ville") String ville) {
+	public Response get(@PathParam("ville") String ville) 
+	{
 		List<Movie> movie = dao.GetTown(ville);
 		if(movie != null) {
 			return Response.ok(movie, MediaType.APPLICATION_JSON).build();
