@@ -49,6 +49,7 @@ public class Adresse {
 	public void setCountry(String country) {
 		this.country = country;
 	}
+	//This method returns the same integer value when called on the same object during the same instance of a Java application
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -56,6 +57,7 @@ public class Adresse {
 		result = prime * result + ((town == null) ? 0 : town.hashCode());
 		return result;
 	}
+	// this method is a method of lang.Object class, and it is used to compare two objects.
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
