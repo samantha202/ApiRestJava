@@ -3,6 +3,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -67,5 +68,18 @@ public class MovieRessource {
 		 URI uri = new URI("/movies/"+ newMovieId);
 		 return Response.created(uri).build();
 	}
+	//this function delete a cinematic projection in our arraylist
+	@DELETE
+	@Path("{id}")
+	public Response delete (@PathParam("id") int id) 
+	{
+		if(dao.delete(id))
+		{
+			return Response.ok().build();
+		}else 
+		{
+			return Response.notModified().build();
+		}	
+	}	
 }
 
